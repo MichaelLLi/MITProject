@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)file:///C:/Users/Michael/AppData/Local/Temp/jl_CE83.tmp/questionnaire.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <title>Optimal Trees Prediction Tool</title>
+    <script src="./Optimal Trees Prediction Tool_files/jquery-3.2.1.slim.min.js.下载" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Optimal Trees Prediction Tool_files/materialize.min.css">
+    <script src="./Optimal Trees Prediction Tool_files/materialize.min.js.下载"></script>
+    <link href="./Optimal Trees Prediction Tool_files/icon" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>.card {
+  background-color: #fff;
+}
+
+.card .button-row {
+  margin: 0px;
+}
+
+.card-content .btn {
+  width: 100%;
+}
+
+.card-content .button-row .button {
+  padding: 0px 0px;
+}
+.card-content .button-row .button .btn {
+  height: 42px;
+  line-height: 42px;
+}
+.card-content .button-row .button:not(:last-child) {
+  padding-right: 12px;
+}
+.card-content .button-row .button:not(:first-child) {
+  padding-left: 12px;
+}
+
+.card-content.main .card-title {
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.card .card-table {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+td, th {
+  padding: 5px 5px;
+  text-align: center;
+}
+
+tr .highlighted {
+  background-color: #008975;
+}
+
+nav {
+  height: 48px;
+  line-height: 48px;
+  margin-bottom: 1rem;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    height: 48px;
+    line-height: 48px;
+}
+
+nav .button-collapse i {
+    height: 48px;
+    line-height: 48px;
+}
+
+nav .brand-logo {
+    font-size: 1.2rem;
+    height: 48px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+nav .brand-logo img {
+    height: 38px;
+    position: absolute;
+    margin-top: 5px;
+    left: 6px;
+}
+
+.card .card-results {
+  text-align: center;
+  font-size: 14px;
+}
+
+.card .stats {
+  color: #008975;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(160,160,160,0.2);
+}
+
+.card-content.main {
+  padding-top: 16px;
+}
+
+.card-content.main .input-field{
+  margin: 0;
+}
+
+.primary {
+  background-color: #00aa8d !important;
+}
+
+.primary-lighter {
+  background-color: #00bf9a !important;
+}
+
+.primary-lightest {
+  background-color: #b2dfdb !important;
+}
+
+.primary-darker {
+  background-color: #008975 !important;
+}
+
+body {
+  background-color: #e1e1e1;
+}
+
+.progress {
+  position: fixed;
+  background-color: #ffe0b2;
+  margin: 0;
+}
+
+.progress .determinate {
+  background-color: #f69019;
+}
+
+.unselected {
+  background-color: #DFDFDF !important;
+  color: #9F9F9F !important;
+  box-shadow: none;
+}
+</style>
+  </head>
+
+  <body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper primary">
+        <a class="brand-logo">
+          <img src="./Optimal Trees Prediction Tool_files/logo.png">
+          Optimal Trees Prediction Tool
+        </a>
+    </div>
+      <div class="progress">
+        <div class="determinate" style="width: 0%;"></div>
+      </div>
+    </nav>
+
+  </div>
+    <div class="container row">
+      <div class="container-col row col s12 m10 push-m1 l8 push-l2 xl6 push-xl3">
+        <div id="question-container">
+          <div id="dynamic-questions"><div class="card hoverable scale-transition scale-out scale-in" id="1"><div class="card-content stats"><span>n = 3622</span><span class="right">Mean: 22168.8</span></div><div class="card-content main"><span class="card-title">What is the total amount of wages earned by the parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="2" style="display: none;"><div class="card-content stats"><span>n = 2247</span><span class="right">Mean: 13022.9</span></div><div class="card-content main"><span class="card-title">What is the total value of investments ofparents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="3" style="display: none;"><div class="card-content stats"><span>n = 1920</span><span class="right">Mean: 10408.8</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="4" style="display: none;"><div class="card-content stats"><span>n = 1283</span><span class="right">Mean: 6013.2</span></div><div class="card-content main"><span class="card-title">What is the total real estate value of parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="5" style="display: none;"><div class="card-content stats"><span>n = 1233</span><span class="right">Mean: 5279</span></div><div class="card-content main"><span class="card-title">Stu_PCOffer</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="6" style="display: none;"><div class="card-content stats"><span>n = 1079</span><span class="right">Mean: 4208.5</span></div><div class="card-content main"><span class="card-title">What is the total amount of interest payment of parents</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="7" style="display: none;"><div class="card-content stats"><span>n = 784</span><span class="right">Mean: 3598</span></div><div class="card-content main"><span class="card-title">What is the purchase price of the main real estate of the parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="8" style="display: none;"><div class="card-content stats"><span>n = 734</span><span class="right">Mean: 3399.2</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="9" style="display: none;"><div class="card-content stats"><span>n = 570</span><span class="right">Mean: 2289.5</span></div><div class="card-content main"><span class="card-title">What is the total amount of wages earned by the parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="10" style="display: none;"><div class="card-content stats"><span>n = 346</span><span class="right">Mean: 1586.1</span></div><div class="card-content main"><span class="card-title">Par_BusFarmIncLoss</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="11" style="display: none;"><div class="card-content stats"><span>n = 287</span><span class="right">Mean: 1289.3</span></div><div class="card-content main"><span class="card-title">What is the income of the student?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="12" style="display: none;"><div class="card-content stats"><span>n = 195</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">1063.8</div></div></div><div class="card hoverable scale-transition scale-out" id="13" style="display: none;"><div class="card-content stats"><span>n = 92</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">1767.3</div></div></div><div class="card hoverable scale-transition scale-out" id="14" style="display: none;"><div class="card-content stats"><span>n = 59</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">3030</div></div></div><div class="card hoverable scale-transition scale-out" id="15" style="display: none;"><div class="card-content stats"><span>n = 224</span><span class="right">Mean: 3375.9</span></div><div class="card-content main"><span class="card-title">Par_TaxDefPenSvgs</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="16" style="display: none;"><div class="card-content stats"><span>n = 169</span><span class="right">Mean: 2973.8</span></div><div class="card-content main"><span class="card-title">What is the total amount of wages earned by the parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="17" style="display: none;"><div class="card-content stats"><span>n = 66</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">2089.2</div></div></div><div class="card hoverable scale-transition scale-out" id="18" style="display: none;"><div class="card-content stats"><span>n = 103</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">3540.7</div></div></div><div class="card hoverable scale-transition scale-out" id="19" style="display: none;"><div class="card-content stats"><span>n = 55</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">4611.5</div></div></div><div class="card hoverable scale-transition scale-out" id="20" style="display: none;"><div class="card-content stats"><span>n = 164</span><span class="right">Mean: 7256.1</span></div><div class="card-content main"><span class="card-title">How many other children of the parents are in College?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="21" style="display: none;"><div class="card-content stats"><span>n = 110</span><span class="right">Mean: 7957.5</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="22" style="display: none;"><div class="card-content stats"><span>n = 59</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">6734.1</div></div></div><div class="card hoverable scale-transition scale-out" id="23" style="display: none;"><div class="card-content stats"><span>n = 51</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">9372.8</div></div></div><div class="card hoverable scale-transition scale-out" id="24" style="display: none;"><div class="card-content stats"><span>n = 54</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">5827.4</div></div></div><div class="card hoverable scale-transition scale-out" id="25" style="display: none;"><div class="card-content stats"><span>n = 50</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">6517.1</div></div></div><div class="card hoverable scale-transition scale-out" id="26" style="display: none;"><div class="card-content stats"><span>n = 295</span><span class="right">Mean: 5830.9</span></div><div class="card-content main"><span class="card-title">Stu_PCOffer</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="27" style="display: none;"><div class="card-content stats"><span>n = 219</span><span class="right">Mean: 5449.4</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="28" style="display: none;"><div class="card-content stats"><span>n = 167</span><span class="right">Mean: 3818.3</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="29" style="display: none;"><div class="card-content stats"><span>n = 117</span><span class="right">Mean: 3194.2</span></div><div class="card-content main"><span class="card-title">What is the total amount of interest payment of parents</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="30" style="display: none;"><div class="card-content stats"><span>n = 66</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">2017.3</div></div></div><div class="card hoverable scale-transition scale-out" id="31" style="display: none;"><div class="card-content stats"><span>n = 51</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">4717.3</div></div></div><div class="card hoverable scale-transition scale-out" id="32" style="display: none;"><div class="card-content stats"><span>n = 50</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">5278.6</div></div></div><div class="card hoverable scale-transition scale-out" id="33" style="display: none;"><div class="card-content stats"><span>n = 52</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">10687.7</div></div></div><div class="card hoverable scale-transition scale-out" id="34" style="display: none;"><div class="card-content stats"><span>n = 76</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">6930.1</div></div></div><div class="card hoverable scale-transition scale-out" id="35" style="display: none;"><div class="card-content stats"><span>n = 154</span><span class="right">Mean: 12779.5</span></div><div class="card-content main"><span class="card-title">What is the total amount of other Untaxable Income of the parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="36" style="display: none;"><div class="card-content stats"><span>n = 104</span><span class="right">Mean: 10624.2</span></div><div class="card-content main"><span class="card-title">What is the total amount of wages earned by the parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="37" style="display: none;"><div class="card-content stats"><span>n = 54</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">8258.9</div></div></div><div class="card hoverable scale-transition scale-out" id="38" style="display: none;"><div class="card-content stats"><span>n = 50</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">13178.7</div></div></div><div class="card hoverable scale-transition scale-out" id="39" style="display: none;"><div class="card-content stats"><span>n = 50</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">17262.4</div></div></div><div class="card hoverable scale-transition scale-out" id="40" style="display: none;"><div class="card-content stats"><span>n = 50</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">24117.6</div></div></div><div class="card hoverable scale-transition scale-out" id="41" style="display: none;"><div class="card-content stats"><span>n = 637</span><span class="right">Mean: 19262.1</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="42" style="display: none;"><div class="card-content stats"><span>n = 577</span><span class="right">Mean: 17483.7</span></div><div class="card-content main"><span class="card-title">What is the total real estate value of parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="43" style="display: none;"><div class="card-content stats"><span>n = 527</span><span class="right">Mean: 16050.9</span></div><div class="card-content main"><span class="card-title">Par_TaxDefPenSvgs</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="44" style="display: none;"><div class="card-content stats"><span>n = 475</span><span class="right">Mean: 14871.7</span></div><div class="card-content main"><span class="card-title">Stu_PCOffer</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="45" style="display: none;"><div class="card-content stats"><span>n = 423</span><span class="right">Mean: 13817.1</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="46" style="display: none;"><div class="card-content stats"><span>n = 319</span><span class="right">Mean: 12465.5</span></div><div class="card-content main"><span class="card-title">How many other children of the parents are in College?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="47" style="display: none;"><div class="card-content stats"><span>n = 205</span><span class="right">Mean: 14182</span></div><div class="card-content main"><span class="card-title">Par_TaxDefPenSvgs</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="48" style="display: none;"><div class="card-content stats"><span>n = 142</span><span class="right">Mean: 12933.9</span></div><div class="card-content main"><span class="card-title">What is the total amount of US Income Tax paid by parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="49" style="display: none;"><div class="card-content stats"><span>n = 86</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">11448.7</div></div></div><div class="card hoverable scale-transition scale-out" id="50" style="display: none;"><div class="card-content stats"><span>n = 56</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">15214.7</div></div></div><div class="card hoverable scale-transition scale-out" id="51" style="display: none;"><div class="card-content stats"><span>n = 63</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">16995.4</div></div></div><div class="card hoverable scale-transition scale-out" id="52" style="display: none;"><div class="card-content stats"><span>n = 114</span><span class="right">Mean: 9378.7</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="53" style="display: none;"><div class="card-content stats"><span>n = 52</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">7689.8</div></div></div><div class="card hoverable scale-transition scale-out" id="54" style="display: none;"><div class="card-content stats"><span>n = 62</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">10795.2</div></div></div><div class="card hoverable scale-transition scale-out" id="55" style="display: none;"><div class="card-content stats"><span>n = 104</span><span class="right">Mean: 17962.8</span></div><div class="card-content main"><span class="card-title">Par_BusFarmIncLoss</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="56" style="display: none;"><div class="card-content stats"><span>n = 54</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">16490.1</div></div></div><div class="card hoverable scale-transition scale-out" id="57" style="display: none;"><div class="card-content stats"><span>n = 50</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">19553.4</div></div></div><div class="card hoverable scale-transition scale-out" id="58" style="display: none;"><div class="card-content stats"><span>n = 52</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">23451.2</div></div></div><div class="card hoverable scale-transition scale-out" id="59" style="display: none;"><div class="card-content stats"><span>n = 52</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">26822.4</div></div></div><div class="card hoverable scale-transition scale-out" id="60" style="display: none;"><div class="card-content stats"><span>n = 50</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">32584.8</div></div></div><div class="card hoverable scale-transition scale-out" id="61" style="display: none;"><div class="card-content stats"><span>n = 60</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">36365</div></div></div><div class="card hoverable scale-transition scale-out" id="62" style="display: none;"><div class="card-content stats"><span>n = 327</span><span class="right">Mean: 28371.6</span></div><div class="card-content main"><span class="card-title">What is the total real estate value of parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="63" style="display: none;"><div class="card-content stats"><span>n = 274</span><span class="right">Mean: 26415.2</span></div><div class="card-content main"><span class="card-title">Stu_PCOffer</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="64" style="display: none;"><div class="card-content stats"><span>n = 223</span><span class="right">Mean: 22167.9</span></div><div class="card-content main"><span class="card-title">What is the total value of investments ofparents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="65" style="display: none;"><div class="card-content stats"><span>n = 139</span><span class="right">Mean: 18393.1</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="66" style="display: none;"><div class="card-content stats"><span>n = 87</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">12491.3</div></div></div><div class="card hoverable scale-transition scale-out" id="67" style="display: none;"><div class="card-content stats"><span>n = 52</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">28267.2</div></div></div><div class="card hoverable scale-transition scale-out" id="68" style="display: none;"><div class="card-content stats"><span>n = 84</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">28414.5</div></div></div><div class="card hoverable scale-transition scale-out" id="69" style="display: none;"><div class="card-content stats"><span>n = 51</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">44986.4</div></div></div><div class="card hoverable scale-transition scale-out" id="70" style="display: none;"><div class="card-content stats"><span>n = 53</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">38485.7</div></div></div><div class="card hoverable scale-transition scale-out" id="71" style="display: none;"><div class="card-content stats"><span>n = 1375</span><span class="right">Mean: 37114.9</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="72" style="display: none;"><div class="card-content stats"><span>n = 911</span><span class="right">Mean: 31723.5</span></div><div class="card-content main"><span class="card-title">How many other children of the parents are in College?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="73" style="display: none;"><div class="card-content stats"><span>n = 583</span><span class="right">Mean: 35402.1</span></div><div class="card-content main"><span class="card-title">What is the total amount of wages earned by the parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="74" style="display: none;"><div class="card-content stats"><span>n = 357</span><span class="right">Mean: 31628.2</span></div><div class="card-content main"><span class="card-title">Par_TaxDefPenSvgs</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="75" style="display: none;"><div class="card-content stats"><span>n = 302</span><span class="right">Mean: 29528.4</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="76" style="display: none;"><div class="card-content stats"><span>n = 170</span><span class="right">Mean: 25971</span></div><div class="card-content main"><span class="card-title">Stu_PCOffer</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="77" style="display: none;"><div class="card-content stats"><span>n = 120</span><span class="right">Mean: 23618.3</span></div><div class="card-content main"><span class="card-title">Par_TaxDefPenSvgs</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="78" style="display: none;"><div class="card-content stats"><span>n = 69</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">20569.3</div></div></div><div class="card hoverable scale-transition scale-out" id="79" style="display: none;"><div class="card-content stats"><span>n = 51</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">27743.5</div></div></div><div class="card hoverable scale-transition scale-out" id="80" style="display: none;"><div class="card-content stats"><span>n = 50</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">31617.4</div></div></div><div class="card hoverable scale-transition scale-out" id="81" style="display: none;"><div class="card-content stats"><span>n = 132</span><span class="right">Mean: 34109.9</span></div><div class="card-content main"><span class="card-title">What is the total amount of interest payment of parents</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="82" style="display: none;"><div class="card-content stats"><span>n = 82</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">29960.1</div></div></div><div class="card hoverable scale-transition scale-out" id="83" style="display: none;"><div class="card-content stats"><span>n = 50</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">40915.6</div></div></div><div class="card hoverable scale-transition scale-out" id="84" style="display: none;"><div class="card-content stats"><span>n = 55</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">43158</div></div></div><div class="card hoverable scale-transition scale-out" id="85" style="display: none;"><div class="card-content stats"><span>n = 226</span><span class="right">Mean: 41363.6</span></div><div class="card-content main"><span class="card-title">Par_TaxDefPenSvgs</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="86" style="display: none;"><div class="card-content stats"><span>n = 150</span><span class="right">Mean: 36261.6</span></div><div class="card-content main"><span class="card-title">Stu_PCOffer</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="87" style="display: none;"><div class="card-content stats"><span>n = 63</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">30842.6</div></div></div><div class="card hoverable scale-transition scale-out" id="88" style="display: none;"><div class="card-content stats"><span>n = 87</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">40185.7</div></div></div><div class="card hoverable scale-transition scale-out" id="89" style="display: none;"><div class="card-content stats"><span>n = 76</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">51433.2</div></div></div><div class="card hoverable scale-transition scale-out" id="90" style="display: none;"><div class="card-content stats"><span>n = 328</span><span class="right">Mean: 25184.9</span></div><div class="card-content main"><span class="card-title">Par_TaxDefPenSvgs</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="91" style="display: none;"><div class="card-content stats"><span>n = 243</span><span class="right">Mean: 22230.9</span></div><div class="card-content main"><span class="card-title">Stu_PCOffer</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="92" style="display: none;"><div class="card-content stats"><span>n = 189</span><span class="right">Mean: 20178.8</span></div><div class="card-content main"><span class="card-title">What is the total amount of untaxed income for the parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="93" style="display: none;"><div class="card-content stats"><span>n = 136</span><span class="right">Mean: 19816.5</span></div><div class="card-content main"><span class="card-title">What is the total amount of US Income Tax paid by parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="94" style="display: none;"><div class="card-content stats"><span>n = 66</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">15524.3</div></div></div><div class="card hoverable scale-transition scale-out" id="95" style="display: none;"><div class="card-content stats"><span>n = 70</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">23863.4</div></div></div><div class="card hoverable scale-transition scale-out" id="96" style="display: none;"><div class="card-content stats"><span>n = 53</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">21108.5</div></div></div><div class="card hoverable scale-transition scale-out" id="97" style="display: none;"><div class="card-content stats"><span>n = 54</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">29413.3</div></div></div><div class="card hoverable scale-transition scale-out" id="98" style="display: none;"><div class="card-content stats"><span>n = 85</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">33629.8</div></div></div><div class="card hoverable scale-transition scale-out" id="99" style="display: none;"><div class="card-content stats"><span>n = 464</span><span class="right">Mean: 47700.3</span></div><div class="card-content main"><span class="card-title">What is the age of the closest sibling of the student?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="100" style="display: none;"><div class="card-content stats"><span>n = 171</span><span class="right">Mean: 51724</span></div><div class="card-content main"><span class="card-title">Par_TaxDefPenSvgs</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="101" style="display: none;"><div class="card-content stats"><span>n = 118</span><span class="right">Mean: 48245.2</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="102" style="display: none;"><div class="card-content stats"><span>n = 57</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">41620.1</div></div></div><div class="card hoverable scale-transition scale-out" id="103" style="display: none;"><div class="card-content stats"><span>n = 61</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">54435.8</div></div></div><div class="card hoverable scale-transition scale-out" id="104" style="display: none;"><div class="card-content stats"><span>n = 53</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">59469.4</div></div></div><div class="card hoverable scale-transition scale-out" id="105" style="display: none;"><div class="card-content stats"><span>n = 293</span><span class="right">Mean: 45352</span></div><div class="card-content main"><span class="card-title">What is the total amount of cash holdsings of parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="106" style="display: none;"><div class="card-content stats"><span>n = 136</span><span class="right">Mean: 42292.5</span></div><div class="card-content main"><span class="card-title">What is the total annual gross income of  parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="107" style="display: none;"><div class="card-content stats"><span>n = 85</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">38815.6</div></div></div><div class="card hoverable scale-transition scale-out" id="108" style="display: none;"><div class="card-content stats"><span>n = 51</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">48087.3</div></div></div><div class="card hoverable scale-transition scale-out" id="109" style="display: none;"><div class="card-content stats"><span>n = 157</span><span class="right">Mean: 48002.3</span></div><div class="card-content main"><span class="card-title">What is the total value of investments ofparents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="110" style="display: none;"><div class="card-content stats"><span>n = 107</span><span class="right">Mean: 46454.8</span></div><div class="card-content main"><span class="card-title">What is the total amount of US Income Tax paid by parents?</span><div class="row button-row"><span class="col s8 button"><input type="number" placeholder="Enter a value..." class="input-field"></span><span class="col s4 button"><a class="waves-effect waves-light btn primary-lightest" value="missing">Not sure</a></span></div></div></div><div class="card hoverable scale-transition scale-out" id="111" style="display: none;"><div class="card-content stats"><span>n = 52</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">39672.1</div></div></div><div class="card hoverable scale-transition scale-out" id="112" style="display: none;"><div class="card-content stats"><span>n = 55</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">52867.5</div></div></div><div class="card hoverable scale-transition scale-out" id="113" style="display: none;"><div class="card-content stats"><span>n = 50</span></div><div class="card-content main"><span class="card-title center-align">Final Prediction</span><div class="card-results">51314.1</div></div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="fixed-action-btn direction-top">
+      <a class="btn-floating btn-large" style="background-color:#f69019;">
+        <i class="large material-icons" style="font-size:2.5rem;">refresh</i>
+      </a>
+    </div>
+    <script>
+      (function(){
+        treejson = {
+    "nodes": [
+        {
+            "tabletext": "",
+            "lower_child": 2,
+            "leaftext": "Mean: 22168.8",
+            "missingdataleft": false,
+            "upper_child": 71,
+            "curvedata": [],
+            "n_node_samples": 3622,
+            "feature": "What is the total amount of wages earned by the parents?",
+            "threshold": 118525.50000000001,
+            "id": 1,
+            "split_type": "PARALLEL",
+            "parent": -2,
+            "categoric_split": [],
+            "depth": 0,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 3,
+            "leaftext": "Mean: 13022.9",
+            "missingdataleft": false,
+            "upper_child": 62,
+            "curvedata": [],
+            "n_node_samples": 2247,
+            "feature": "What is the total value of investments ofparents?",
+            "threshold": 66939.5,
+            "id": 2,
+            "split_type": "PARALLEL",
+            "parent": 1,
+            "categoric_split": [],
+            "depth": 1,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 4,
+            "leaftext": "Mean: 10408.8",
+            "missingdataleft": false,
+            "upper_child": 41,
+            "curvedata": [],
+            "n_node_samples": 1920,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 87841.5,
+            "id": 3,
+            "split_type": "PARALLEL",
+            "parent": 2,
+            "categoric_split": [],
+            "depth": 2,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 5,
+            "leaftext": "Mean: 6013.2",
+            "missingdataleft": false,
+            "upper_child": 40,
+            "curvedata": [],
+            "n_node_samples": 1283,
+            "feature": "What is the total real estate value of parents?",
+            "threshold": 388544.99999999994,
+            "id": 4,
+            "split_type": "PARALLEL",
+            "parent": 3,
+            "categoric_split": [],
+            "depth": 3,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 6,
+            "leaftext": "Mean: 5279",
+            "missingdataleft": false,
+            "upper_child": 35,
+            "curvedata": [],
+            "n_node_samples": 1233,
+            "feature": "Stu_PCOffer",
+            "threshold": 7250.0,
+            "id": 5,
+            "split_type": "PARALLEL",
+            "parent": 4,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 7,
+            "leaftext": "Mean: 4208.5",
+            "missingdataleft": false,
+            "upper_child": 26,
+            "curvedata": [],
+            "n_node_samples": 1079,
+            "feature": "What is the total amount of interest payment of parents",
+            "threshold": 8.499999999999998,
+            "id": 6,
+            "split_type": "PARALLEL",
+            "parent": 5,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 8,
+            "leaftext": "Mean: 3598",
+            "missingdataleft": false,
+            "upper_child": 25,
+            "curvedata": [],
+            "n_node_samples": 784,
+            "feature": "What is the purchase price of the main real estate of the parents?",
+            "threshold": 67375.0,
+            "id": 7,
+            "split_type": "PARALLEL",
+            "parent": 6,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 9,
+            "leaftext": "Mean: 3399.2",
+            "missingdataleft": false,
+            "upper_child": 20,
+            "curvedata": [],
+            "n_node_samples": 734,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 66188.5,
+            "id": 8,
+            "split_type": "PARALLEL",
+            "parent": 7,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 10,
+            "leaftext": "Mean: 2289.5",
+            "missingdataleft": false,
+            "upper_child": 15,
+            "curvedata": [],
+            "n_node_samples": 570,
+            "feature": "What is the total amount of wages earned by the parents?",
+            "threshold": 35435.5,
+            "id": 9,
+            "split_type": "PARALLEL",
+            "parent": 8,
+            "categoric_split": [],
+            "depth": 8,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 11,
+            "leaftext": "Mean: 1586.1",
+            "missingdataleft": false,
+            "upper_child": 14,
+            "curvedata": [],
+            "n_node_samples": 346,
+            "feature": "Par_BusFarmIncLoss",
+            "threshold": 26408.0,
+            "id": 10,
+            "split_type": "PARALLEL",
+            "parent": 9,
+            "categoric_split": [],
+            "depth": 9,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 12,
+            "leaftext": "Mean: 1289.3",
+            "missingdataleft": false,
+            "upper_child": 13,
+            "curvedata": [],
+            "n_node_samples": 287,
+            "feature": "What is the income of the student?",
+            "threshold": 2238.0,
+            "id": 11,
+            "split_type": "PARALLEL",
+            "parent": 10,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "1063.8",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 195,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 12,
+            "split_type": "LEAF",
+            "parent": 11,
+            "categoric_split": [],
+            "depth": 11,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "1767.3",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 92,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 13,
+            "split_type": "LEAF",
+            "parent": 11,
+            "categoric_split": [],
+            "depth": 11,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "3030",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 59,
+            "feature": "",
+            "threshold": 3.31911285e-315,
+            "id": 14,
+            "split_type": "LEAF",
+            "parent": 10,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 16,
+            "leaftext": "Mean: 3375.9",
+            "missingdataleft": false,
+            "upper_child": 19,
+            "curvedata": [],
+            "n_node_samples": 224,
+            "feature": "Par_TaxDefPenSvgs",
+            "threshold": 2244.5,
+            "id": 15,
+            "split_type": "PARALLEL",
+            "parent": 9,
+            "categoric_split": [],
+            "depth": 9,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 17,
+            "leaftext": "Mean: 2973.8",
+            "missingdataleft": false,
+            "upper_child": 18,
+            "curvedata": [],
+            "n_node_samples": 169,
+            "feature": "What is the total amount of wages earned by the parents?",
+            "threshold": 44283.0,
+            "id": 16,
+            "split_type": "PARALLEL",
+            "parent": 15,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "2089.2",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 66,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 17,
+            "split_type": "LEAF",
+            "parent": 16,
+            "categoric_split": [],
+            "depth": 11,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "3540.7",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 103,
+            "feature": "",
+            "threshold": 3.319550633e-315,
+            "id": 18,
+            "split_type": "LEAF",
+            "parent": 16,
+            "categoric_split": [],
+            "depth": 11,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "4611.5",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 55,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 19,
+            "split_type": "LEAF",
+            "parent": 15,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 21,
+            "leaftext": "Mean: 7256.1",
+            "missingdataleft": false,
+            "upper_child": 24,
+            "curvedata": [],
+            "n_node_samples": 164,
+            "feature": "How many other children of the parents are in College?",
+            "threshold": 1.5,
+            "id": 20,
+            "split_type": "PARALLEL",
+            "parent": 8,
+            "categoric_split": [],
+            "depth": 8,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 22,
+            "leaftext": "Mean: 7957.5",
+            "missingdataleft": false,
+            "upper_child": 23,
+            "curvedata": [],
+            "n_node_samples": 110,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 77351.0,
+            "id": 21,
+            "split_type": "PARALLEL",
+            "parent": 20,
+            "categoric_split": [],
+            "depth": 9,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "6734.1",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 59,
+            "feature": "",
+            "threshold": 3.319550633e-315,
+            "id": 22,
+            "split_type": "LEAF",
+            "parent": 21,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "9372.8",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 51,
+            "feature": "",
+            "threshold": 3.319550633e-315,
+            "id": 23,
+            "split_type": "LEAF",
+            "parent": 21,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "5827.4",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 54,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 24,
+            "split_type": "LEAF",
+            "parent": 20,
+            "categoric_split": [],
+            "depth": 9,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "6517.1",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 50,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 25,
+            "split_type": "LEAF",
+            "parent": 7,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 27,
+            "leaftext": "Mean: 5830.9",
+            "missingdataleft": false,
+            "upper_child": 34,
+            "curvedata": [],
+            "n_node_samples": 295,
+            "feature": "Stu_PCOffer",
+            "threshold": 3375.0,
+            "id": 26,
+            "split_type": "PARALLEL",
+            "parent": 6,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 28,
+            "leaftext": "Mean: 5449.4",
+            "missingdataleft": false,
+            "upper_child": 33,
+            "curvedata": [],
+            "n_node_samples": 219,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 73091.49999999977,
+            "id": 27,
+            "split_type": "PARALLEL",
+            "parent": 26,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 29,
+            "leaftext": "Mean: 3818.3",
+            "missingdataleft": false,
+            "upper_child": 32,
+            "curvedata": [],
+            "n_node_samples": 167,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 48847.0,
+            "id": 28,
+            "split_type": "PARALLEL",
+            "parent": 27,
+            "categoric_split": [],
+            "depth": 8,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 30,
+            "leaftext": "Mean: 3194.2",
+            "missingdataleft": false,
+            "upper_child": 31,
+            "curvedata": [],
+            "n_node_samples": 117,
+            "feature": "What is the total amount of interest payment of parents",
+            "threshold": 61.5,
+            "id": 29,
+            "split_type": "PARALLEL",
+            "parent": 28,
+            "categoric_split": [],
+            "depth": 9,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "2017.3",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 66,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 30,
+            "split_type": "LEAF",
+            "parent": 29,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "4717.3",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 51,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 31,
+            "split_type": "LEAF",
+            "parent": 29,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "5278.6",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 50,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 32,
+            "split_type": "LEAF",
+            "parent": 28,
+            "categoric_split": [],
+            "depth": 9,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "10687.7",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 52,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 33,
+            "split_type": "LEAF",
+            "parent": 27,
+            "categoric_split": [],
+            "depth": 8,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "6930.1",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 76,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 34,
+            "split_type": "LEAF",
+            "parent": 26,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 36,
+            "leaftext": "Mean: 12779.5",
+            "missingdataleft": false,
+            "upper_child": 39,
+            "curvedata": [],
+            "n_node_samples": 154,
+            "feature": "What is the total amount of other Untaxable Income of the parents?",
+            "threshold": 239.5,
+            "id": 35,
+            "split_type": "PARALLEL",
+            "parent": 5,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 37,
+            "leaftext": "Mean: 10624.2",
+            "missingdataleft": false,
+            "upper_child": 38,
+            "curvedata": [],
+            "n_node_samples": 104,
+            "feature": "What is the total amount of wages earned by the parents?",
+            "threshold": 74500.0,
+            "id": 36,
+            "split_type": "PARALLEL",
+            "parent": 35,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "8258.9",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 54,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 37,
+            "split_type": "LEAF",
+            "parent": 36,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "13178.7",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 50,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 38,
+            "split_type": "LEAF",
+            "parent": 36,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "17262.4",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 50,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 39,
+            "split_type": "LEAF",
+            "parent": 35,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "24117.6",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 50,
+            "feature": "",
+            "threshold": 3.92759343e-316,
+            "id": 40,
+            "split_type": "LEAF",
+            "parent": 4,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 42,
+            "leaftext": "Mean: 19262.1",
+            "missingdataleft": false,
+            "upper_child": 61,
+            "curvedata": [],
+            "n_node_samples": 637,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 147542.99999999977,
+            "id": 41,
+            "split_type": "PARALLEL",
+            "parent": 3,
+            "categoric_split": [],
+            "depth": 3,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 43,
+            "leaftext": "Mean: 17483.7",
+            "missingdataleft": false,
+            "upper_child": 60,
+            "curvedata": [],
+            "n_node_samples": 577,
+            "feature": "What is the total real estate value of parents?",
+            "threshold": 235732.99999999997,
+            "id": 42,
+            "split_type": "PARALLEL",
+            "parent": 41,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 44,
+            "leaftext": "Mean: 16050.9",
+            "missingdataleft": false,
+            "upper_child": 59,
+            "curvedata": [],
+            "n_node_samples": 527,
+            "feature": "Par_TaxDefPenSvgs",
+            "threshold": 17757.0,
+            "id": 43,
+            "split_type": "PARALLEL",
+            "parent": 42,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 45,
+            "leaftext": "Mean: 14871.7",
+            "missingdataleft": false,
+            "upper_child": 58,
+            "curvedata": [],
+            "n_node_samples": 475,
+            "feature": "Stu_PCOffer",
+            "threshold": 15500.0,
+            "id": 44,
+            "split_type": "PARALLEL",
+            "parent": 43,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 46,
+            "leaftext": "Mean: 13817.1",
+            "missingdataleft": false,
+            "upper_child": 55,
+            "curvedata": [],
+            "n_node_samples": 423,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 112294.5,
+            "id": 45,
+            "split_type": "PARALLEL",
+            "parent": 44,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 47,
+            "leaftext": "Mean: 12465.5",
+            "missingdataleft": false,
+            "upper_child": 52,
+            "curvedata": [],
+            "n_node_samples": 319,
+            "feature": "How many other children of the parents are in College?",
+            "threshold": 1.5,
+            "id": 46,
+            "split_type": "PARALLEL",
+            "parent": 45,
+            "categoric_split": [],
+            "depth": 8,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 48,
+            "leaftext": "Mean: 14182",
+            "missingdataleft": false,
+            "upper_child": 51,
+            "curvedata": [],
+            "n_node_samples": 205,
+            "feature": "Par_TaxDefPenSvgs",
+            "threshold": 5091.999999999999,
+            "id": 47,
+            "split_type": "PARALLEL",
+            "parent": 46,
+            "categoric_split": [],
+            "depth": 9,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 49,
+            "leaftext": "Mean: 12933.9",
+            "missingdataleft": false,
+            "upper_child": 50,
+            "curvedata": [],
+            "n_node_samples": 142,
+            "feature": "What is the total amount of US Income Tax paid by parents?",
+            "threshold": 7395.499999999999,
+            "id": 48,
+            "split_type": "PARALLEL",
+            "parent": 47,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "11448.7",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 86,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 49,
+            "split_type": "LEAF",
+            "parent": 48,
+            "categoric_split": [],
+            "depth": 11,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "15214.7",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 56,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 50,
+            "split_type": "LEAF",
+            "parent": 48,
+            "categoric_split": [],
+            "depth": 11,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "16995.4",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 63,
+            "feature": "",
+            "threshold": 3.9215682e-316,
+            "id": 51,
+            "split_type": "LEAF",
+            "parent": 47,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 53,
+            "leaftext": "Mean: 9378.7",
+            "missingdataleft": false,
+            "upper_child": 54,
+            "curvedata": [],
+            "n_node_samples": 114,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 98759.00000000023,
+            "id": 52,
+            "split_type": "PARALLEL",
+            "parent": 46,
+            "categoric_split": [],
+            "depth": 9,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "7689.8",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 52,
+            "feature": "",
+            "threshold": 3.319550633e-315,
+            "id": 53,
+            "split_type": "LEAF",
+            "parent": 52,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "10795.2",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 62,
+            "feature": "",
+            "threshold": 3.319550633e-315,
+            "id": 54,
+            "split_type": "LEAF",
+            "parent": 52,
+            "categoric_split": [],
+            "depth": 10,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 56,
+            "leaftext": "Mean: 17962.8",
+            "missingdataleft": false,
+            "upper_child": 57,
+            "curvedata": [],
+            "n_node_samples": 104,
+            "feature": "Par_BusFarmIncLoss",
+            "threshold": 1010.0000000000291,
+            "id": 55,
+            "split_type": "PARALLEL",
+            "parent": 45,
+            "categoric_split": [],
+            "depth": 8,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "16490.1",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 54,
+            "feature": "",
+            "threshold": 3.319550633e-315,
+            "id": 56,
+            "split_type": "LEAF",
+            "parent": 55,
+            "categoric_split": [],
+            "depth": 9,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "19553.4",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 50,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 57,
+            "split_type": "LEAF",
+            "parent": 55,
+            "categoric_split": [],
+            "depth": 9,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "23451.2",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 52,
+            "feature": "",
+            "threshold": 3.9215682e-316,
+            "id": 58,
+            "split_type": "LEAF",
+            "parent": 44,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "26822.4",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 52,
+            "feature": "",
+            "threshold": 3.9215682e-316,
+            "id": 59,
+            "split_type": "LEAF",
+            "parent": 43,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "32584.8",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 50,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 60,
+            "split_type": "LEAF",
+            "parent": 42,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "36365",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 60,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 61,
+            "split_type": "LEAF",
+            "parent": 41,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 63,
+            "leaftext": "Mean: 28371.6",
+            "missingdataleft": false,
+            "upper_child": 70,
+            "curvedata": [],
+            "n_node_samples": 327,
+            "feature": "What is the total real estate value of parents?",
+            "threshold": 150950.0,
+            "id": 62,
+            "split_type": "PARALLEL",
+            "parent": 2,
+            "categoric_split": [],
+            "depth": 2,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 64,
+            "leaftext": "Mean: 26415.2",
+            "missingdataleft": false,
+            "upper_child": 69,
+            "curvedata": [],
+            "n_node_samples": 274,
+            "feature": "Stu_PCOffer",
+            "threshold": 24000.0,
+            "id": 63,
+            "split_type": "PARALLEL",
+            "parent": 62,
+            "categoric_split": [],
+            "depth": 3,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 65,
+            "leaftext": "Mean: 22167.9",
+            "missingdataleft": false,
+            "upper_child": 68,
+            "curvedata": [],
+            "n_node_samples": 223,
+            "feature": "What is the total value of investments ofparents?",
+            "threshold": 161753.5,
+            "id": 64,
+            "split_type": "PARALLEL",
+            "parent": 63,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 66,
+            "leaftext": "Mean: 18393.1",
+            "missingdataleft": false,
+            "upper_child": 67,
+            "curvedata": [],
+            "n_node_samples": 139,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 97011.5,
+            "id": 65,
+            "split_type": "PARALLEL",
+            "parent": 64,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "12491.3",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 87,
+            "feature": "",
+            "threshold": 3.319550633e-315,
+            "id": 66,
+            "split_type": "LEAF",
+            "parent": 65,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "28267.2",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 52,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 67,
+            "split_type": "LEAF",
+            "parent": 65,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "28414.5",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 84,
+            "feature": "",
+            "threshold": 3.31947822e-315,
+            "id": 68,
+            "split_type": "LEAF",
+            "parent": 64,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "44986.4",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 51,
+            "feature": "",
+            "threshold": 3.31947822e-315,
+            "id": 69,
+            "split_type": "LEAF",
+            "parent": 63,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "38485.7",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 53,
+            "feature": "",
+            "threshold": 3.31947822e-315,
+            "id": 70,
+            "split_type": "LEAF",
+            "parent": 62,
+            "categoric_split": [],
+            "depth": 3,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 72,
+            "leaftext": "Mean: 37114.9",
+            "missingdataleft": false,
+            "upper_child": 99,
+            "curvedata": [],
+            "n_node_samples": 1375,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 189785.5,
+            "id": 71,
+            "split_type": "PARALLEL",
+            "parent": 1,
+            "categoric_split": [],
+            "depth": 1,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 73,
+            "leaftext": "Mean: 31723.5",
+            "missingdataleft": false,
+            "upper_child": 90,
+            "curvedata": [],
+            "n_node_samples": 911,
+            "feature": "How many other children of the parents are in College?",
+            "threshold": 1.5,
+            "id": 72,
+            "split_type": "PARALLEL",
+            "parent": 71,
+            "categoric_split": [],
+            "depth": 2,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 74,
+            "leaftext": "Mean: 35402.1",
+            "missingdataleft": false,
+            "upper_child": 85,
+            "curvedata": [],
+            "n_node_samples": 583,
+            "feature": "What is the total amount of wages earned by the parents?",
+            "threshold": 153574.5,
+            "id": 73,
+            "split_type": "PARALLEL",
+            "parent": 72,
+            "categoric_split": [],
+            "depth": 3,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 75,
+            "leaftext": "Mean: 31628.2",
+            "missingdataleft": false,
+            "upper_child": 84,
+            "curvedata": [],
+            "n_node_samples": 357,
+            "feature": "Par_TaxDefPenSvgs",
+            "threshold": 21339.500000000004,
+            "id": 74,
+            "split_type": "PARALLEL",
+            "parent": 73,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 76,
+            "leaftext": "Mean: 29528.4",
+            "missingdataleft": false,
+            "upper_child": 81,
+            "curvedata": [],
+            "n_node_samples": 302,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 140814.5,
+            "id": 75,
+            "split_type": "PARALLEL",
+            "parent": 74,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 77,
+            "leaftext": "Mean: 25971",
+            "missingdataleft": false,
+            "upper_child": 80,
+            "curvedata": [],
+            "n_node_samples": 170,
+            "feature": "Stu_PCOffer",
+            "threshold": 19000.0,
+            "id": 76,
+            "split_type": "PARALLEL",
+            "parent": 75,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 78,
+            "leaftext": "Mean: 23618.3",
+            "missingdataleft": false,
+            "upper_child": 79,
+            "curvedata": [],
+            "n_node_samples": 120,
+            "feature": "Par_TaxDefPenSvgs",
+            "threshold": 6084.499999999999,
+            "id": 77,
+            "split_type": "PARALLEL",
+            "parent": 76,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "20569.3",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 69,
+            "feature": "",
+            "threshold": 3.319550633e-315,
+            "id": 78,
+            "split_type": "LEAF",
+            "parent": 77,
+            "categoric_split": [],
+            "depth": 8,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "27743.5",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 51,
+            "feature": "",
+            "threshold": 3.319550633e-315,
+            "id": 79,
+            "split_type": "LEAF",
+            "parent": 77,
+            "categoric_split": [],
+            "depth": 8,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "31617.4",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 50,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 80,
+            "split_type": "LEAF",
+            "parent": 76,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 82,
+            "leaftext": "Mean: 34109.9",
+            "missingdataleft": false,
+            "upper_child": 83,
+            "curvedata": [],
+            "n_node_samples": 132,
+            "feature": "What is the total amount of interest payment of parents",
+            "threshold": 60.5,
+            "id": 81,
+            "split_type": "PARALLEL",
+            "parent": 75,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "29960.1",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 82,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 82,
+            "split_type": "LEAF",
+            "parent": 81,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "40915.6",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 50,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 83,
+            "split_type": "LEAF",
+            "parent": 81,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "43158",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 55,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 84,
+            "split_type": "LEAF",
+            "parent": 74,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 86,
+            "leaftext": "Mean: 41363.6",
+            "missingdataleft": false,
+            "upper_child": 89,
+            "curvedata": [],
+            "n_node_samples": 226,
+            "feature": "Par_TaxDefPenSvgs",
+            "threshold": 17188.5,
+            "id": 85,
+            "split_type": "PARALLEL",
+            "parent": 73,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 87,
+            "leaftext": "Mean: 36261.6",
+            "missingdataleft": false,
+            "upper_child": 88,
+            "curvedata": [],
+            "n_node_samples": 150,
+            "feature": "Stu_PCOffer",
+            "threshold": 11000.0,
+            "id": 86,
+            "split_type": "PARALLEL",
+            "parent": 85,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "30842.6",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 63,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 87,
+            "split_type": "LEAF",
+            "parent": 86,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "40185.7",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 87,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 88,
+            "split_type": "LEAF",
+            "parent": 86,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "51433.2",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 76,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 89,
+            "split_type": "LEAF",
+            "parent": 85,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 91,
+            "leaftext": "Mean: 25184.9",
+            "missingdataleft": false,
+            "upper_child": 98,
+            "curvedata": [],
+            "n_node_samples": 328,
+            "feature": "Par_TaxDefPenSvgs",
+            "threshold": 16803.5,
+            "id": 90,
+            "split_type": "PARALLEL",
+            "parent": 72,
+            "categoric_split": [],
+            "depth": 3,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 92,
+            "leaftext": "Mean: 22230.9",
+            "missingdataleft": false,
+            "upper_child": 97,
+            "curvedata": [],
+            "n_node_samples": 243,
+            "feature": "Stu_PCOffer",
+            "threshold": 19696.5,
+            "id": 91,
+            "split_type": "PARALLEL",
+            "parent": 90,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 93,
+            "leaftext": "Mean: 20178.8",
+            "missingdataleft": false,
+            "upper_child": 96,
+            "curvedata": [],
+            "n_node_samples": 189,
+            "feature": "What is the total amount of untaxed income for the parents?",
+            "threshold": 6810.0,
+            "id": 92,
+            "split_type": "PARALLEL",
+            "parent": 91,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 94,
+            "leaftext": "Mean: 19816.5",
+            "missingdataleft": false,
+            "upper_child": 95,
+            "curvedata": [],
+            "n_node_samples": 136,
+            "feature": "What is the total amount of US Income Tax paid by parents?",
+            "threshold": 16888.0,
+            "id": 93,
+            "split_type": "PARALLEL",
+            "parent": 92,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "15524.3",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 66,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 94,
+            "split_type": "LEAF",
+            "parent": 93,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "23863.4",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 70,
+            "feature": "",
+            "threshold": 4.74155117e-316,
+            "id": 95,
+            "split_type": "LEAF",
+            "parent": 93,
+            "categoric_split": [],
+            "depth": 7,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "21108.5",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 53,
+            "feature": "",
+            "threshold": 3.31903222e-315,
+            "id": 96,
+            "split_type": "LEAF",
+            "parent": 92,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "29413.3",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 54,
+            "feature": "",
+            "threshold": 3.31903222e-315,
+            "id": 97,
+            "split_type": "LEAF",
+            "parent": 91,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "33629.8",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 85,
+            "feature": "",
+            "threshold": 3.31903222e-315,
+            "id": 98,
+            "split_type": "LEAF",
+            "parent": 90,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 100,
+            "leaftext": "Mean: 47700.3",
+            "missingdataleft": false,
+            "upper_child": 105,
+            "curvedata": [],
+            "n_node_samples": 464,
+            "feature": "What is the age of the closest sibling of the student?",
+            "threshold": 16.5,
+            "id": 99,
+            "split_type": "PARALLEL",
+            "parent": 71,
+            "categoric_split": [],
+            "depth": 2,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 101,
+            "leaftext": "Mean: 51724",
+            "missingdataleft": false,
+            "upper_child": 104,
+            "curvedata": [],
+            "n_node_samples": 171,
+            "feature": "Par_TaxDefPenSvgs",
+            "threshold": 15908.0,
+            "id": 100,
+            "split_type": "PARALLEL",
+            "parent": 99,
+            "categoric_split": [],
+            "depth": 3,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 102,
+            "leaftext": "Mean: 48245.2",
+            "missingdataleft": false,
+            "upper_child": 103,
+            "curvedata": [],
+            "n_node_samples": 118,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 217023.0,
+            "id": 101,
+            "split_type": "PARALLEL",
+            "parent": 100,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "41620.1",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 57,
+            "feature": "",
+            "threshold": 3.31903222e-315,
+            "id": 102,
+            "split_type": "LEAF",
+            "parent": 101,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "54435.8",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 61,
+            "feature": "",
+            "threshold": 3.31903222e-315,
+            "id": 103,
+            "split_type": "LEAF",
+            "parent": 101,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "59469.4",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 53,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 104,
+            "split_type": "LEAF",
+            "parent": 100,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 106,
+            "leaftext": "Mean: 45352",
+            "missingdataleft": false,
+            "upper_child": 109,
+            "curvedata": [],
+            "n_node_samples": 293,
+            "feature": "What is the total amount of cash holdsings of parents?",
+            "threshold": 9375.0,
+            "id": 105,
+            "split_type": "PARALLEL",
+            "parent": 99,
+            "categoric_split": [],
+            "depth": 3,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 107,
+            "leaftext": "Mean: 42292.5",
+            "missingdataleft": false,
+            "upper_child": 108,
+            "curvedata": [],
+            "n_node_samples": 136,
+            "feature": "What is the total annual gross income of  parents?",
+            "threshold": 234373.0,
+            "id": 106,
+            "split_type": "PARALLEL",
+            "parent": 105,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "38815.6",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 85,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 107,
+            "split_type": "LEAF",
+            "parent": 106,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "48087.3",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 51,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 108,
+            "split_type": "LEAF",
+            "parent": 106,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 110,
+            "leaftext": "Mean: 48002.3",
+            "missingdataleft": false,
+            "upper_child": 113,
+            "curvedata": [],
+            "n_node_samples": 157,
+            "feature": "What is the total value of investments ofparents?",
+            "threshold": 166850.5,
+            "id": 109,
+            "split_type": "PARALLEL",
+            "parent": 105,
+            "categoric_split": [],
+            "depth": 4,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": 111,
+            "leaftext": "Mean: 46454.8",
+            "missingdataleft": false,
+            "upper_child": 112,
+            "curvedata": [],
+            "n_node_samples": 107,
+            "feature": "What is the total amount of US Income Tax paid by parents?",
+            "threshold": 38782.0,
+            "id": 110,
+            "split_type": "PARALLEL",
+            "parent": 109,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "39672.1",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 52,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 111,
+            "split_type": "LEAF",
+            "parent": 110,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "52867.5",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 55,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 112,
+            "split_type": "LEAF",
+            "parent": 110,
+            "categoric_split": [],
+            "depth": 6,
+            "levels": []
+        },
+        {
+            "tabletext": "",
+            "lower_child": -2,
+            "leaftext": "51314.1",
+            "missingdataleft": false,
+            "upper_child": -2,
+            "curvedata": [],
+            "n_node_samples": 50,
+            "feature": "",
+            "threshold": 3.92113184e-316,
+            "id": 113,
+            "split_type": "LEAF",
+            "parent": 109,
+            "categoric_split": [],
+            "depth": 5,
+            "levels": []
+        }
+    ],
+    "simple_layout": false
+}
+;
+        /* global $ */
+
+function isIE() {
+  return navigator.userAgent.indexOf('MSIE ') > -1 ||
+         navigator.userAgent.indexOf('Trident/') > -1;
+}
+function isIOS() {
+  return navigator.platform.substr(0,2) === 'iP';
+}
+
+var treedata;
+var knownInfo = [];
+var questionVisible = [];
+
+var zindex = 1;
+
+$(document).ready(function(){
+  $('select').formSelect();
+  $('.fixed-action-btn').floatingActionButton();
+});
+
+var get_question = function(question) {
+ while (question.parentElement.getAttribute('id') != 'dynamic-questions') {
+    question = question.parentElement;
+  }
+  return question;
+}
+
+var answerQuestionButton = function() {
+  var buttonrow = this.parentElement.parentElement;
+  $(buttonrow).find('.btn').each(function(i, eachbutton) {
+    $(eachbutton).removeClass('primary-darker').addClass('unselected');
+  });
+
+  $(this).removeClass('unselected').addClass('primary-darker');
+
+  var question = get_question(this);
+  var nodeId = parseInt(question.getAttribute('id')) - 1;
+  var newValue = this.getAttribute('value');
+  if (newValue != 'missing') {
+    newValue = parseFloat(newValue);
+    if (isNaN(newValue)) {
+     newValue = undefined;
+    }
+  }
+  answerQuestion(question, nodeId, newValue);
+};
+
+var answerQuestionSelect = function() {
+  var question = get_question(this);
+  var nodeId = parseInt(question.getAttribute('id')) - 1;
+  var newValue = this.value;
+  answerQuestion(question, nodeId, newValue);
+};
+
+var answerQuestionText = function() {
+  var question = get_question(this);
+  var nodeId = parseInt(question.getAttribute('id')) - 1;
+  var newValue = parseFloat(this.value);
+  if (isNaN(newValue)) {
+    newValue = undefined;
+  }
+  answerQuestion(question, nodeId, newValue);
+};
+
+var answerQuestion = function(question, nodeId, newValue) {
+  if (newValue == 'missing') {
+    $(question).find('select').val('').formSelect();
+    $(question).find('input[type="number"]').val('');
+  } else {
+    $(question).find('a').removeClass('primary-darker');
+  }
+  var node = treedata.nodes[nodeId];
+  knownInfo[node.feature] = newValue;
+  refreshQuestions(nodeId);
+};
+
+var refreshQuestions = function(nodeId) {
+  // Hide keyboard on iOS
+  if (isIOS()) {
+    $('.question input').blur();
+  }
+
+  for (var i = nodeId + 1; i < treedata.nodes.length; i++) {
+    if (questionVisible[i]) {
+      var feature = treedata.nodes[i].feature;
+      if (feature) {
+        knownInfo[feature] = undefined;
+      }
+    }
+    questionVisible[i] = false;
+  }
+
+  i = nodeId;
+  while (true) {
+    var node = treedata.nodes[i];
+    if (node.split_type == 'LEAF') {
+      questionVisible[i] = true;
+      break;
+    }
+
+    var feature = node.feature;
+    var value = knownInfo[feature];
+
+    // Don't know this variable yet
+    if (value === undefined) {
+      questionVisible[i] = true;
+      break;
+    }
+
+    var islower;
+    if (value == 'missing') {
+      islower = node.missingdataleft
+    } else if (node.split_type == 'CATEGORIC') {
+      var level = node.levels[value - 2][0];
+      islower = node.categoric_split[level - 1];
+    } else {
+      islower = (value < node.threshold);
+    }
+
+    i = (islower ? node.lower_child : node.upper_child) - 1;
+  }
+
+  $('#dynamic-questions').children().each(function(i, question) {
+    var node_id = parseInt(question.getAttribute('id'));
+    if (questionVisible[node_id - 1]) {
+      $(question).show();
+      $(question).addClass('scale-in');
+      var node = treedata.nodes[node_id - 1];
+      if (knownInfo[node.feature] === undefined) {
+        $(question).find('a').removeClass('unselected').removeClass('primary-darker');
+        $(question).find('select').val('').formSelect();
+        $(question).find('input[type="number"]').val('');
+
+        // Focus next element except on IOS where it can cause keyboard to cover
+        // new question
+        if (!isIOS()) {
+          $(question).find('select').focus();
+          $(question).find('input[type="number"]').focus();
+        }
+      }
+    } else {
+      $(question).removeClass('scale-in');
+      $(question).hide();
+      $(question).find('select').val('');
+      $(question).find('input[type="number"]').val('');
+    }
+  });
+
+  // update the width of progress bar
+  var percent_finished = treedata.nodes[i].depth/treedata.nodes[i].maxdepth;
+  $('.progress .determinate').css('width', percent_finished * 100 + '%');
+  // Scroll to bottom question
+  $(window).scrollTop($(document).height());
+};
+
+var resetQuestions = function() {
+  knownInfo = [];
+  refreshQuestions(0);
+};
+
+var loadtree = function(treejson) {
+
+  treedata = treejson;
+
+  var questions = $('#dynamic-questions');
+  questions.empty();
+
+  var nodes = treedata.nodes;
+
+  // Loop through to create the maximum depth at a sub tree
+  for (var i = nodes.length; i >= 1; i--) {
+    var node = nodes[i - 1];
+    if (node.split_type == 'LEAF') {
+      node.maxdepth = node.depth;
+    } else {
+      node.maxdepth = Math.max(
+        nodes[node.lower_child - 1].maxdepth,
+        nodes[node.upper_child - 1].maxdepth);
+    }
+  }
+
+  for (var i = 0; i < nodes.length; i++) {
+    var node = nodes[i];
+    var div = document.createElement('div');
+    div.setAttribute('class', 'card hoverable scale-transition scale-out');
+    div.setAttribute('id', node.id);
+    // Adjust the z-index to be on top when the question is clicked so that
+    // any dropdown is always drawn on top
+    $(div).click(function () {
+      $(this).css('z-index', zindex++);
+    });
+
+    if (!treedata.simple_layout) {
+      var stats = document.createElement('div');
+      stats.setAttribute('class', 'card-content stats');
+      div.appendChild(stats);
+
+
+      var stats1 = document.createElement('span');
+      stats1.appendChild(document.createTextNode('n = ' + node.n_node_samples));
+      stats.appendChild(stats1);
+
+      if (node.split_type != 'LEAF') {
+        var stats2 = document.createElement('span');
+        stats2.className = 'right';
+        stats2.appendChild(document.createTextNode(node.leaftext));
+        stats.appendChild(stats2);
+      }
+    }
+
+    var content = document.createElement('div');
+    content.setAttribute('class', 'card-content main');
+    div.appendChild(content);
+
+    var questionheading = document.createElement('span');
+    questionheading.setAttribute('class', 'card-title');
+    content.appendChild(questionheading);
+
+    var varname = node.feature;
+
+
+    if (node.split_type != 'LEAF') {
+      questionheading.appendChild(document.createTextNode(varname));
+
+      // Row for answers (including skip button)
+      var buttonRow = document.createElement('div');
+      buttonRow.setAttribute('class', 'row button-row');
+      content.appendChild(buttonRow);
+
+      if (node.split_type == 'CATEGORIC') {
+        // Categoric
+        var levels = node.levels;
+        addlevels(buttonRow, levels);
+        addbutton(buttonRow, 'skip');
+
+      } else {
+        // Parallel
+
+        if (node.threshold == 0.5) {
+          // Binary
+          var cutoff = +node.threshold.toFixed(4);
+          addbutton(buttonRow, '≥ ' + cutoff);
+          addbutton(buttonRow, '< ' + cutoff);
+          addbutton(buttonRow, 'skip');
+
+        } else {
+
+          var buttonSpan = document.createElement('span');
+          buttonSpan.setAttribute('class', 'col s8 button');
+          buttonRow.appendChild(buttonSpan);
+
+          var textbox = document.createElement('input');
+          textbox.setAttribute('type', 'number');
+          textbox.setAttribute('placeholder', 'Enter a value...');
+          textbox.setAttribute('class', 'input-field');
+          buttonSpan.appendChild(textbox);
+          $(textbox).change(answerQuestionText);
+
+          addbutton(buttonRow, 'skip');
+
+          // Hack for IE to advance question on pressing enter
+          if (isIE()) {
+            $(textbox).on('keyup', function(e) {
+              if (e.keyCode == '13') {
+                e.preventDefault();
+                $(this).trigger('blur');
+              }
+            });
+          }
+        }
+
+      }
+    } else {
+      questionheading.className += ' center-align';
+      questionheading.appendChild(document.createTextNode('Final Prediction'));
+
+      if (node.tabletext == '') {
+        var result = document.createElement('div');
+        result.setAttribute('class', 'card-results');
+        result.appendChild(document.createTextNode(node.leaftext));
+        content.appendChild(result);
+      } else {
+        var result2 = document.createElement('div');
+        result2.setAttribute('class', 'card card-table primary-lighter');
+        $(result2).append(node.tabletext);
+        content.appendChild(result2);
+      }
+    }
+
+    questions.append(div);
+  }
+  resetQuestions();
+};
+
+
+function addbutton(buttonRow, text) {
+  var buttonSpan = document.createElement('span');
+  buttonSpan.setAttribute('class', 'col s4 button');
+  buttonRow.appendChild(buttonSpan);
+
+  var buttonLabel = document.createElement('a');
+  buttonLabel.setAttribute('class', 'waves-effect waves-light btn primary');
+  buttonSpan.appendChild(buttonLabel);
+
+  var value;
+  if (text == '< 0.5') {
+    text = 'No';
+    value = 0;
+  } else if (text == '≥ 0.5') {
+    text = 'Yes';
+    value = 1;
+  } else if (text == 'skip') {
+    buttonSpan.setAttribute('class', 'col s4 button');
+    buttonLabel.setAttribute('class', 'waves-effect waves-light btn primary-lightest');
+    text = 'Not sure';
+    value = 'missing';
+  }
+  buttonLabel.setAttribute('value', value);
+  buttonLabel.append(text);
+  $(buttonLabel).click(answerQuestionButton);
+}
+
+var addlevels = function(buttonRow, levels) {
+  var buttonSpan = document.createElement('span');
+  buttonSpan.setAttribute('class', 'col s8 button');
+  buttonRow.appendChild(buttonSpan);
+
+  var selectdiv = document.createElement('div');
+  selectdiv.setAttribute('class', 'input-field');
+  buttonSpan.appendChild(selectdiv);
+
+  var select = document.createElement('select');
+  if (isIOS()) {
+    select.className += ' browser-default';
+  }
+  selectdiv.appendChild(select);
+
+  var option = document.createElement('option');
+  option.setAttribute('disabled', '');
+  option.setAttribute('selected', '');
+  option.appendChild(document.createTextNode('Choose an answer...'));
+  select.appendChild(option);
+
+  for (var r = 0; r < levels.length; r++) {
+    var value = levels[r][0];
+    var level = levels[r][1];
+
+    option = document.createElement('option');
+    option.setAttribute('value', value);
+    option.appendChild(document.createTextNode(level));
+    select.appendChild(option);
+  }
+  $(select).change(answerQuestionSelect);
+};
+
+        $('.brand-logo, .btn-floating').click(resetQuestions);
+        loadtree(treejson);
+      })();
+    </script>
+  
+
+
+</body></html>
